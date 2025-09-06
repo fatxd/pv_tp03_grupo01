@@ -16,16 +16,20 @@ for (let i = 0; i < 3; i++) {
         if (matriz[i][j] == "x") {
             console.log("encontre la x en la fila: " + i + " columna:" + j);
             let resta = 0;
+            let suma = 0;
             if (i == 0) {
 
                 resta = Number(matriz[2][j] || 0) - Number(matriz[1][j] || 0);
+                 matriz[i][j] = resta;
 
             } else if (i == 1) {
                 resta = Number(matriz[2][j] || 0) - Number(matriz[0][j] || 0);
+                matriz[i][j] = resta;
 
+            }else if (i == 2){
+                suma = Number(matriz[0][j] || 0) + Number(matriz[1][j] || 0);
+                matriz[i][j] = suma;
             }
-            matriz[i][j] = resta;
-
 
         }
 
