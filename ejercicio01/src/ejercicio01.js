@@ -8,7 +8,6 @@ function obtenerNumeros() {
             matriz[i][j] = cadena[j];
         }
     }
-
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < matriz[i].length; j++) {
             if (matriz[i][j] == "x") {
@@ -24,7 +23,7 @@ function obtenerNumeros() {
                         if((Number(matriz[0][j+1]) + Number(matriz[1][j+1]) > 9)){
                             valorX += 1; 
                         }
-                    }else if(valorX >9 && (matriz[0][j+1] + matriz[1][j+1]) >9 ){
+                    }else if((matriz[0][j+1] + matriz[1][j+1]) >9 ){
                         valorX +=1;
                     }
                 }
