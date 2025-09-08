@@ -14,11 +14,11 @@ function obtenerNumeros() {
             if (matriz[i][j] == "x") {
                 console.log("encontre la x en la fila: " + i + " columna:" + j);
                 if (i == 0) {
-                    valorX = Number(matriz[2][j] || 0) - Number(matriz[1][j] || 0);
+                    valorX = Number(matriz[2][j]) - Number(matriz[1][j]);
                 } else if (i == 1) {
-                    valorX = Number(matriz[2][j] || 0) - Number(matriz[0][j] || 0);
+                    valorX = Number(matriz[2][j]) - Number(matriz[0][j]);
                 } else if (i == 2) {
-                    valorX = Number(matriz[0][j] || 0) + Number(matriz[1][j] || 0);
+                    valorX = Number(matriz[0][j]) + Number(matriz[1][j]);
                     if (valorX > 9 && j > 0 ) {
                         valorX = Math.floor(valorX % 10);
                         if((Number(matriz[0][j+1]) + Number(matriz[1][j+1]) > 9)){
