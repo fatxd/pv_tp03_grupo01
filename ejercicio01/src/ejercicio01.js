@@ -8,7 +8,6 @@ function obtenerNumeros() {
             matriz[i][j] = cadena[j];
         }
     }
-
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < matriz[i].length; j++) {
             if (matriz[i][j] == "x") {
