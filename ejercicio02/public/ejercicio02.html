@@ -1,29 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 01</title>
-    <link rel="stylesheet" href="../css/ejercicio01.css">
+    <link rel="stylesheet" href="../css/ejercicio02.css">
 </head>
+
 <body>
-    <script type = "module" src="../src/ejercicio01.js"></script>
     <div class="contenedor">
-        <h1>Calculadora de X en una Suma</h1>
-        <h2>Ingresa los numeros</h2>
+        <h1>Registro de Mascotas</h1>
+        <h2>Registra las mascotas de tus clientes y sus controles</h2>
         <section class="seccion-formulario">
             <form action="" id="formulario">
-                <label for="fila0">Primeros números a sumar:</label>
-                <input type="text" placeholder="ej. 123" id="fila0" required>
-                <label for="fila1">Segundos números a sumar:</label>
-                <input type="text" placeholder="ej. 45x" id="fila1" required>
-                <label for="fila2">Resultado de la suma:</label>
-                <input type="text" placeholder="ej. 579" id="fila2" required>
-                <button type="button" id="btn-resultado">Calcular X</button>
+                <label for="fila0">Nombre de la mascota:</label>
+                <input type="text" placeholder="ej. Pepe" id="fila0" required>
+
+                <label for="fila1">Raza:</label>
+                <select id="fila1" name="Raza" required>
+                    <option value="" disabled selected>Selecciona una opcion</option>
+                    <option value="Loro">loro</option>
+                    <option value="Perro">perro</option>
+                    <option value="Gato">gato</option>
+                </select>
+
+                <label for="fila2">Edad:</label>
+                <input type="number" placeholder="ej. 10" id="fila2" required>
+
+                <label for="fila3">Nombre del dueño</label>
+                <input type="text" placeholder="Franco" id="fila3" required>
+                <label>¿Está vacunado?</label>
+                <input type="radio" id="fila4" name="vacu" value="Si" required>
+                <label for="fila4">Si</label>
+                <input type="radio" id="fila5" name="vacu" value="No" required>
+                <label for="fila5">No</label>
+
+
                 <p id="salida"></p>
+                <button type="submit" id="submit">Registrar</button>
+
             </form>
         </section>
     </div>
-    <script type = "module" src="../src/ejercicio01.js"></script>
+    <script src="../src/ejercicio02.js"></script>
 </body>
+
 </html>
