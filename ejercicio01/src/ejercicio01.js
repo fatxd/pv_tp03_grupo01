@@ -24,7 +24,7 @@ function obtenerNumeros() {
                         if((Number(matriz[0][j+1]) + Number(matriz[1][j+1]) > 9)){
                             valorX += 1; 
                         }
-                    }else if(valorX >9 && (matriz[0][j+1] + matriz[1][j+1]) >9 ){
+                    }else if((matriz[0][j+1] + matriz[1][j+1]) >9 ){
                         valorX +=1;
                     }
                 }
