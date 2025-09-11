@@ -40,3 +40,4 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
     e.preventDefault(); // evita que la página se recargue
     agregarMascota();
 });
+
