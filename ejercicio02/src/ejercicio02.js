@@ -1,13 +1,36 @@
-import { cargarMatriz, encontrarX } from "./modulo.js";
+let mascotas = []
+let mascota = {}
+let contVacuna = 0
+let contNoVacuna = 0
+let contMacotas = 0
+let click = parseInt(prompt("ingrese 1 si desea ingresar una mascota 0 para cancelar"))
+console.log(click)
+for (let index = 0; index < 5; index++) {
 
-function main() {
-   
-    let matriz = cargarMatriz()
-    let valorX = encontrarX(matriz)
-    if (valorX !== null) {
-        document.getElementById("salida").textContent = "El valor de X es: " + valorX;
-    } else {
-        document.getElementById("salida").textContent = "No se encontró ninguna X.";
+
+    for (let index = 0; index < 1; index++) {
+
+        mascota.nombre = prompt("Ingrese el nombre mascota")
+        mascota.tipo = prompt("Tipo")
+        mascota.edad = prompt("Dueño")
+        mascota.vacuna = prompt("Vacuna")
+
+
+        if (mascota.vacuna == "si") {
+            contVacuna += 1
+        } else {
+            contNoVacuna += 1
+        }
+        contMacotas += 1
+        click = 0   
+        console.log(mascota)
+
     }
+    
+    mascotas[index] = mascota
+    
 }
-document.getElementById("btn-resultado").addEventListener("click", main);
+console.log(mascotas)
+console.log(contMacotas)
+console.log(contNoVacuna)
+
