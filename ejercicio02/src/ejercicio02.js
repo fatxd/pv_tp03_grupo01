@@ -33,4 +33,3 @@ for (let index = 0; index < 5; index++) {
 console.log(mascotas)
 console.log(contMacotas)
 console.log(contNoVacuna)
-
