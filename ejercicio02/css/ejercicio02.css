@@ -1,37 +1,71 @@
-.contenedor{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    flex-direction: column;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f9fdf9;
+  padding: 20px;
+}
+.contenedor {
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  margin: 30px auto;
+  border: 1px solid #d6ecd6;
+}
+h1 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+.contenedor > p {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #555;
+}
+.seccion-formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+label {
+  font-weight: 600;
+  color: #2e7d32;
+}
+input[type="text"],
+input[type="number"],
+select {
+  padding: 10px;
+  border: 1px solid #a3d9a5;
+  border-radius: 8px;
+  outline: none;
+}
+.opciones-vacunado {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+input[type="radio"] {
+  margin-right: 6px;
+}
+p {
+  color: #333;
+}
+button {
+  background: #2e7d32;
+  color: #fff;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.seccion-formulario {
-    display: flex;
-    flex-direction: column;
-}
-
-#formulario{
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(243,239,233);
-    border: 1px rgb(173, 165, 165) solid;
-    border-radius: 5%;
-    padding: 35px;
-    gap: 5px;
-}
-
-#btn-resultado{
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5%;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-#btn-resultado:hover{
-    background-color: #45a049;
+button:hover {
+  background: #256628;
 }
