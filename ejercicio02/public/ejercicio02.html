@@ -44,6 +44,10 @@
                 <button type="submit" id="submit">Registrar Mascota</button>
             </form>
         </section>
+
+    </div>
+    <!-- Aca esta los div que modifique -->
+    <div>
         <table id="tabla-mascotas">
             <tr>
                 <td>Nombre</td>
@@ -51,11 +55,31 @@
                 <td>Edad</td>
                 <td>Dueño</td>
                 <td>Vacunado</td>
-                <td></td>
+
             </tr>
-            
+
+        </table>
+
+    </div>
+    <div>
+        <table id="contador">
+            <thead>
+                <tr>
+                    <th>Mascotas Registradas</th>
+                    <th>Vacunadas</th>
+                    <th>No Vacunadas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="total-mascotas">0</td>
+                    <td id="vacunadas">0</td>
+                    <td id="no-vacunadas">0</td>
+                </tr>
+            </tbody>
         </table>
     </div>
+
     <script type="module" src="../src/ejercicio02.js"></script>
 </body>
 
