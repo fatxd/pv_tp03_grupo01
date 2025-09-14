@@ -69,3 +69,61 @@ button {
 button:hover {
   background: #256628;
 }
+
+/* Desde aca cambie*/
+
+#tabla-mascotas {
+  width: 100%;
+  border-collapse: collapse; /* Une bordes */
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+#tabla-mascotas th, 
+#tabla-mascotas td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+#tabla-mascotas th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+#tabla-mascotas tr:nth-child(even) {
+  background-color: #f9f9f9; /* Filas alternadas */
+}
+
+#tabla-mascotas tr:hover {
+  background-color: #f1f1f1; /* Efecto hover */
+}
+#contador {
+  width: 60%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+#contador th, 
+#contador td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+#contador th {
+  background-color: #e9f5ff; /* celeste claro */
+  font-weight: bold;
+}
+
+#contador tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#contador tr:hover {
+  background-color: #f1f1f1;
+}
+
