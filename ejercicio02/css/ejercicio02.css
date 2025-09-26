@@ -13,7 +13,7 @@ body {
   padding: 25px 30px;
   border-radius: 15px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
-  max-width: 500px;
+  max-width: 800px;
   margin: 30px auto;
   border: 1px solid #d6ecd6;
 }
@@ -99,6 +99,11 @@ button:hover {
 #tabla-mascotas tr:hover {
   background-color: #f1f1f1; /* Efecto hover */
 }
+#cont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #contador {
   width: 60%;
   border-collapse: collapse;
@@ -127,3 +132,51 @@ button:hover {
   background-color: #f1f1f1;
 }
 
+
+#tabla-mascotas {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border: 1px solid #d6ecd6;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#tabla-mascotas th,
+#tabla-mascotas td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #e5f5e5;
+  color: #333;
+}
+
+#tabla-mascotas th {
+  background-color: #2e7d32;
+  color: #fff;
+  font-weight: bold;
+}
+
+#tabla-mascotas tr:nth-child(even) {
+  background-color: #f4fbf4;
+}
+
+#tabla-mascotas tr:hover {
+  background-color: #e9f7e9;
+}
+
+.contenedor-contadores {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #d6ecd6;
+  border-radius: 10px;
+  background-color: #f4fbf4;
+}
+
+.contador p {
+  font-weight: bold;
+  color: #2e7d32;
+  font-size: 16px;
+}
