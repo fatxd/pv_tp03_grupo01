@@ -13,30 +13,39 @@ export function cargarMatriz() {
 }
 
 export function encontrarX(matriz) {
-    let valorX = null
+    const filas = 3; 
+    const columnas = matriz[0].length;
+    let carry = 0;
+    let valorX = null; 
 
-    for (let i = 0; i < 3; i++) {
-        for (let j = 0; j < matriz[i].length; j++) {
-            if (matriz[i][j] == "x") {
-                console.log("encontre la x en la fila: " + i + " columna:" + j);
-                if (i == 0) {
-                    valorX = Number(matriz[2][j] || 0) - Number(matriz[1][j] || 0);
-                } else if (i == 1) {
-                    valorX = Number(matriz[2][j] || 0) - Number(matriz[0][j] || 0);
-                } else if (i == 2) {
-                    valorX = Number(matriz[0][j] || 0) + Number(matriz[1][j] || 0);
-                    if (valorX > 9 && j > 0) {
-                        valorX = Math.floor(valorX % 10);
-                        if ((Number(matriz[0][j + 1]) + Number(matriz[1][j + 1]) > 9)) {
-                            valorX += 1;
-                        }
-                    } else if ((matriz[0][j + 1] + matriz[1][j + 1]) > 9) {
-                        valorX += 1;
-                    }
-                }
-                matriz[i][j] = valorX;
-            }
+    
+    for (let j = columnas - 1; j >= 0; j--) {
+        let a = matriz[0][j];
+        let b = matriz[1][j];
+        let c = matriz[2][j];
+
+        
+        a = a === "x" ? null : Number(a);
+        b = b === "x" ? null : Number(b);
+        c = c === "x" ? null : Number(c);
+
+        if (a === null) {
+            a = (c - b - carry + 10) % 10;
+            matriz[0][j] = a;
+            valorX = a;
+        } else if (b === null) {
+            b = (c - a - carry + 10) % 10;
+            matriz[1][j] = b;
+            valorX = b;
+        } else if (c === null) {
+            c = (a + b + carry) % 10;
+            matriz[2][j] = c;
+            valorX = c;
         }
+
+        
+        carry = Math.floor((a + b + carry) / 10);
     }
-    return valorX
+
+    return valorX;
 }

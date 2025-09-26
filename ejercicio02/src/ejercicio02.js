@@ -1,74 +1,60 @@
 
-let listaMascotas = [];
-let contadorSi = 0;
-let contadorNo = 0
+import { agregarMascota, mostrarMascotas, borrarMascota } from "./modulo.js";
 
-function agregarMascota() {
+const formulario = document.getElementById("formulario");
+const tabla = document.querySelector("#tabla-mascotas tbody");
+let contMascota = 0
+let contSi = 0
+let contNo = 0
 
+formulario.addEventListener("submit", function (e) {
+  e.preventDefault();
   let nombre = document.getElementById("nombre-mascota").value;
   let tipo = document.getElementById("opciones").value;
   let edad = document.getElementById("edad").value;
   let nombreDueno = document.getElementById("nombre-dueno").value;
   let vacunaSelect = document.querySelector('input[name="vacunado"]:checked');
-  let vacuna = vacunaSelect ? vacunaSelect.value : "no";
+  let vacuna = vacunaSelect ? vacunaSelect.value : "No seleccionado";
+
   const mascota = { id: Date.now(), nombre, tipo, edad, nombreDueno, vacuna };
-  if (vacuna === "si") {
-    contadorSi++;
+  contMascota = agregarMascota(mascota, contMascota);
+  mostrarMascotas(tabla);
+
+
+  formulario.reset();
+
+  if (vacuna == "si") {
+    contSi += 1
+  } else if (vacuna == "no") {
+    contNo += 1
   } else {
-    contadorNo++;
-
+    contNo += 0
+    contSi += 0
   }
+  actualizarContador();
 
-  listaMascotas.push(mascota);
-  actualizarContadores();
+});
 
-  console.log(listaMascotas);
-  mostrarMascotas();
-
-  document.getElementById("formulario").reset();
-}
-function mostrarMascotas() {
-  let tabla = document.querySelector("#tabla-mascotas tbody");
-  tabla.innerHTML = ""; // limpiar antes de volver a pintar
-
-  listaMascotas.forEach(mascota => {
-    let fila = `
-          <tr>
-            <td>${mascota.nombre}</td>
-            <td>${"Raza: " + mascota.tipo}</td>
-            <td>${"Edad: " + mascota.edad}</td>
-            <td>${"Dueño: " + mascota.nombreDueno}</td>
-            <td>${"Vacunado: " + mascota.vacuna}</td>
-              <td>
-              <button onclick="eliminarMascota(${mascota.id})">Eliminar</button>
-            </td>
-          </tr>
-        `;
-    tabla.innerHTML += fila;
-  });
-}
-function actualizarContadores() {
-  document.getElementById("contador-si").textContent = contadorSi;
-  document.getElementById("contador-no").textContent = contadorNo;
-}
-
-function eliminarMascota(id) {
-  listaMascotas = listaMascotas.filter(mascota => mascota.id !== id);
-  mostrarMascotas();
-  if (mascotaEliminada) {
-    if (mascotaEliminada.vacuna === "si") {
-      contadorSi--;
-    } else {
-      contadorNo--;
+tabla.addEventListener("click", function (e) {
+  if (e.target.dataset.action === "borrar") {
+    let fila = e.target.closest("tr");
+    let id = parseInt(fila.dataset.id);
+    let estadoVacuna = fila.cells[4].textContent.replace("Vacunado: ", "").trim();
+    if (estadoVacuna === "si") {
+      contSi -= 1;
+    } else if (estadoVacuna === "no") {
+      contNo -= 1;
     }
-    actualizarContadores();
-
+    contMascota = borrarMascota(id, contMascota);
+    mostrarMascotas(tabla);
+    actualizarContador();
   }
-}
 
-document.getElementById("formulario").addEventListener("submit", function (e) {
-  e.preventDefault(); // evita que la página se recargue
-  agregarMascota();
 });
 
 
+function actualizarContador() {
+  document.getElementById("total-mascotas").textContent = contMascota;
+  document.getElementById("vacunadas").textContent = contSi;
+  document.getElementById("no-vacunadas").textContent = contNo;
+}
